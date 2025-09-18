@@ -1,0 +1,38 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug FastAPI API",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/api/main.py",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}/api",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/api"
+      },
+      "args": [],
+      "justMyCode": true
+    },
+    {
+      "name": "Debug React Web",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/web",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"]
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Debug Full Stack",
+      "configurations": ["Debug FastAPI API", "Debug React Web"],
+      "stopAll": true,
+      "presentation": {
+        "hidden": false,
+        "group": "fullstack",
+        "order": 1
+      }
+    }
+  ]
+}
